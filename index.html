@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Figma Project</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <script
+      src="https://kit.fontawesome.com/07e0d8fff1.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body
+    class="w-full h-screen relative bg-white text-gray-800 transition-colors duration-500"
+  >
+    <!-- Header / Navbar -->
+    <header
+      id="header"
+      class="w-full h-20 bg-white shadow-md hover:shadow-lg transition-shadow duration-300 fixed top-0 left-0 z-50"
+    >
+      <nav class="w-full h-full m-auto px-10 flex items-center justify-between">
+        <!-- Left Section -->
+        <div class="left h-full flex items-center">
+          <div id="logo" class="h-full">
+            <img
+              class="h-full bg-cover transition-transform duration-300 hover:scale-105"
+              src="/Figma_project/assets/figma-logo-removebg-preview.png"
+              alt="logo"
+            />
+          </div>
+          <div class="flex items-center gap-8 ml-8">
+            <div class="navLinks">
+              Products <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <div class="navLinks">
+              Solutions <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <div class="navLinks">
+              Community <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <div class="navLinks">
+              Resources <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <div class="navLinks">Pricing</div>
+          </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right flex items-center gap-6">
+          <div id="loginBtn">Log in</div>
+
+          <!-- Contact sales button -->
+          <button
+            class="group relative px-6 py-2 text-[18px] border-2 border-gray-700 rounded-md flex items-center justify-center overflow-hidden"
+          >
+            <span class="flex items-center">
+              <span
+                class="text transition-all duration-500 ease-in-out group-hover:mr-5"
+                >Contact sales</span
+              >
+              <span
+                class="arrow inline-block opacity-0 transform -translate-x-5 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 ease-in-out"
+              >
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </span>
+          </button>
+
+          <!-- Get started for free button -->
+          <button
+            class="group relative px-6 py-2.5 text-[18px] bg-black text-white font-medium rounded-md flex items-center justify-center overflow-hidden"
+          >
+            <span class="flex items-center">
+              <span
+                class="text transition-all duration-500 ease-in-out group-hover:mr-5"
+                >Get started for free</span
+              >
+              <span
+                class="arrow inline-block opacity-0 transform -translate-x-5 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 ease-in-out"
+              >
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </span>
+          </button>
+
+          <!-- Menu button -->
+          <button
+            id="menuBtn"
+            class="bg-gray-50 py-2.5 px-4 text-[20px] rounded cursor-pointer transition-all duration-300 hover:bg-gray-100 hover:scale-110 hover:shadow-lg active:scale-95"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <div
+      id="navDropdown"
+      class="h-0 overflow-hidden fixed top-20 left-0 w-full bg-white transition-[height] duration-400 ease-in-out z-40 shadow-[0_10px_30px_rgba(0,0,0,0.1)]"
+    ></div>
+
+    <!-- Sidebar -->
+    <aside
+      id="sidebar"
+      class="h-full w-80 fixed top-0 -right-80 z-40 backdrop-blur-md bg-gray-100/60 shadow-lg transition-all duration-500 overflow-y-auto pt-20"
+    >
+      <div class="p-6 flex flex-col gap-6">
+        <h2 id="menuHeading" class="text-2xl font-bold text-gray-800">Menu</h2>
+
+        <!-- Theme Toggle -->
+        <div
+          id="themeBtn"
+          class="relative flex items-center justify-center w-32 h-12 bg-gray-200/50 backdrop-blur-sm rounded-full cursor-pointer transition-all duration-300"
+        >
+          <span
+            id="toggleSlider"
+            class="absolute w-10 h-10 bg-white rounded-full shadow-md left-1 top-1 transition-all duration-500 ease-in-out"
+          ></span>
+
+          <i
+            class="fa-solid fa-sun text-yellow-400 absolute left-4 top-1/2 -translate-y-1/2 transition-all duration-500 ease-in-out"
+          ></i>
+          <i
+            class="fa-solid fa-moon text-gray-600 absolute right-4 top-1/2 -translate-y-1/2 transition-all duration-500 ease-in-out"
+          ></i>
+        </div>
+
+        <!-- Nav Links -->
+        <ul class="flex flex-col gap-4">
+          <li>
+            <a
+              href="#"
+              class="block p-3 rounded-lg font-medium text-gray-700 text-shadow-white hover:bg-gray-200/50 hover:translate-x-2 transition-all duration-300"
+              >Products</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block p-3 rounded-lg font-medium text-gray-700 text-shadow-white hover:bg-gray-200/50 hover:translate-x-2 transition-all duration-300"
+              >Solutions</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block p-3 rounded-lg font-medium text-gray-700 text-shadow-white hover:bg-gray-200/50 hover:translate-x-2 transition-all duration-300"
+              >Community</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block p-3 rounded-lg font-medium text-gray-700 text-shadow-white hover:bg-gray-200/50 hover:translate-x-2 transition-all duration-300"
+              >Resources</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#"
+              class="block p-3 rounded-lg font-medium text-gray-700 text-shadow-white hover:bg-gray-200/50 hover:translate-x-2 transition-all duration-300"
+              >Pricing</a
+            >
+          </li>
+        </ul>
+
+        <div class="flex-1"></div>
+
+        <!-- Logout Button -->
+        <button
+          id="logoutBtn"
+          class="w-full flex items-center justify-center gap-2 py-3 bg-[#d62828] text-white font-medium rounded-lg shadow-md hover:bg-[#bf0603] hover:scale-105 transition-all duration-300 cursor-pointer active:scale-95"
+        >
+          <i
+            class="fa-solid fa-right-from-bracket animate-pulse hover:translate-x-1 transition-all duration-300"
+          ></i>
+          Log Out
+        </button>
+      </div>
+    </aside>
+
+    <!-- hero section 1  -->
+    <section
+      id="hero-sec"
+      class="w-full min-h-full mt-25 flex justify-center items-start pt-8 relative"
+    >
+      <div id="sliderTrack" class="flex gap-5">
+        <!-- Original video cards -->
+        <div class="video-card">
+          <iframe
+            src="https://player.vimeo.com/video/1103822703?h=c8f0240387&muted=1&loop=1&controls=0"
+            allow="autoplay; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
+        <div class="video-card">
+          <iframe
+            src="https://player.vimeo.com/video/1103822384?h=d87e2634b3&muted=1&loop=1&controls=0"
+            allow="autoplay; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
+        <div class="video-card">
+          <iframe
+            src="https://player.vimeo.com/video/1106141156?h=394f5f9721&muted=1&loop=1&controls=0"
+            allow="autoplay; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
+        <div class="video-card">
+          <iframe
+            src="https://player.vimeo.com/video/1103822749?h=ad2a6b8283&muted=1&loop=1&controls=0"
+            allow="autoplay; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
+        <div class="video-card">
+          <iframe
+            src="https://player.vimeo.com/video/1103862294?h=802500bb17&muted=1&loop=1&controls=0"
+            allow="autoplay; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
+        <div class="video-card">
+          <iframe
+            src="https://player.vimeo.com/video/1103822125?h=e4b4944014&muted=1&loop=1&controls=0"
+            allow="autoplay; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
+
+        <!-- Duplicate cards for seamless loop -->
+        <div class="video-card">
+          <iframe
+            src="https://player.vimeo.com/video/1103822703?h=c8f0240387&muted=1&loop=1&controls=0"
+            allow="autoplay; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
+        <div class="video-card">
+          <iframe
+            src="https://player.vimeo.com/video/1103822384?h=d87e2634b3&muted=1&loop=1&controls=0"
+            allow="autoplay; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
+        <div class="video-card">
+          <iframe
+            src="https://player.vimeo.com/video/1106141156?h=394f5f9721&muted=1&loop=1&controls=0"
+            allow="autoplay; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
+        <div class="video-card">
+          <iframe
+            src="https://player.vimeo.com/video/1103822749?h=ad2a6b8283&muted=1&loop=1&controls=0"
+            allow="autoplay; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
+        <div class="video-card">
+          <iframe
+            src="https://player.vimeo.com/video/1103862294?h=802500bb17&muted=1&loop=1&controls=0"
+            allow="autoplay; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
+        <div class="video-card">
+          <iframe
+            src="https://player.vimeo.com/video/1103822125?h=e4b4944014&muted=1&loop=1&controls=0"
+            allow="autoplay; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
+      </div>
+
+      <div
+        class="absolute w-[45%] h-55 top-40 bg-black/20 text-gray-100 text-shadow-xs text-shadow-black backdrop-blur-md rounded-2xl p-5 flex flex-col justify-between items-end"
+      >
+        <div id="title" class="text-3xl md:text-[40px] capitalize"></div>
+        <button class="primary-btn">Get started</button>
+      </div>
+
+      <div
+        class="absolute left-1/2 bottom-35 -translate-x-1/2 flex gap-5 shadow-md shadow-gray-300 bg-white w-[15%] backdrop-blur-md py-2 rounded items-center justify-center z-10"
+      >
+        <!-- Left Arrow -->
+        <button
+          class="group size-14 rounded-lg bg-black/50 backdrop-blur-md border border-white/10 flex items-center justify-center text-xl text-white transition-all duration-300 ease-out hover:bg-black/90 hover:scale-110 active:scale-95 cursor-pointer"
+        >
+          <i
+            class="fa-solid fa-chevron-left transition-transform duration-300 group-hover:-translate-x-0.5"
+          ></i>
+        </button>
+
+        <!-- Right Arrow -->
+        <button
+          class="group size-14 rounded-lg bg-black/50 backdrop-blur-md border border-white/10 flex items-center justify-center text-xl text-white transition-all duration-300 ease-out hover:bg-black/90 hover:scale-110 active:scale-95 cursor-pointer"
+        >
+          <i
+            class="fa-solid fa-chevron-right transition-transform duration-300 group-hover:translate-x-0.5"
+          ></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- video section 2-->
+    <section id="video-sec" class="w-full min-h-full relative">
+      <div
+        class="w-full h-15 bg-white flex justify-center items-center absolute -top-5 left-0 overflow-hidden"
+      >
+        <div
+          id="logoTrack"
+          class="flex items-center gap-13 w-max animate-logo-scroll"
+        >
+          <!-- LOGOS (set 1) -->
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/63efa1d3d16c97552586e2ac6a280a6b2389b88f-100x48.svg"
+          />
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/5e789db505180ee41e0612d7d53e2ec48c9c5837-153x20.svg"
+          />
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/927f806a262abfc02a79d68fc83dd6f960a06ada-141x28.svg"
+          />
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/bbfcc0e04437442a9637cc58efde849dfadb313c-76x48.svg"
+          />
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/01d4ea19e824b3596f8f6c701d3b8319e49631b0-146x18.svg"
+          />
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/a9bfb23cca986ee16b0547274bcd7461ffd373aa-67x18.svg"
+          />
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/cc8b81fd47ded1e82d83258e2f674e0951e20fcc-86x18.svg"
+          />
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/fb78b2f382a2d2d93b155601fbc9032379d2515d-79x20.svg"
+          />
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/3081387dc4c82dc9a24d653c3c86fa96b8c450a8-81x18.svg"
+          />
+
+          <!-- LOGOS (set 2 – duplicate for infinity) -->
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/63efa1d3d16c97552586e2ac6a280a6b2389b88f-100x48.svg"
+          />
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/5e789db505180ee41e0612d7d53e2ec48c9c5837-153x20.svg"
+          />
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/927f806a262abfc02a79d68fc83dd6f960a06ada-141x28.svg"
+          />
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/bbfcc0e04437442a9637cc58efde849dfadb313c-76x48.svg"
+          />
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/01d4ea19e824b3596f8f6c701d3b8319e49631b0-146x18.svg"
+          />
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/a9bfb23cca986ee16b0547274bcd7461ffd373aa-67x18.svg"
+          />
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/cc8b81fd47ded1e82d83258e2f674e0951e20fcc-86x18.svg"
+          />
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/fb78b2f382a2d2d93b155601fbc9032379d2515d-79x20.svg"
+          />
+          <img
+            class="logo-img"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/3081387dc4c82dc9a24d653c3c86fa96b8c450a8-81x18.svg"
+          />
+        </div>
+      </div>
+
+      <div class="w-full min-h-full px-15 pt-30">
+        <h1
+          id="sec2-heading"
+          class="text-[50px] w-[66%] leading-15 font-medium"
+        >
+          Prompt, code, and design from first idea to final product
+        </h1>
+
+        <div
+          class="w-[82%] h-140 m-auto mt-20 rounded overflow-hidden relative"
+        >
+          <img
+            class="w-full h-full object-cover"
+            src="./assets/videoImage.png"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div class="w-full flex flex-col justify-center items-center">
+        <div class="flex justify-center flex-wrap gap-2 pt-10">
+          <button class="tag-btn promote">Promote</button>
+          <button class="tag-btn design">Design</button>
+          <button class="tag-btn draw">Draw</button>
+          <button class="tag-btn build">Build</button>
+          <button class="tag-btn publish">Publish</button>
+          <button class="tag-btn jam">Jam</button>
+          <button class="tag-btn present">Present</button>
+        </div>
+        <div>
+          <h3 class="text-2xl py-2.5">
+            Prompt to code anything you can imagine with AI.
+          </h3>
+        </div>
+        <button
+          class="nav-btn flex items-center gap-2 capitalize text-[18px] pt-2 pb-5 relative"
+        >
+          <span class="nav-text">
+            Explore Figma Make
+            <i class="fa-solid fa-arrow-right nav-arrow pl-1"></i>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Figma helps section 3 -->
+
+    <section
+      id="Figma-helps-section3"
+      class="w-full h-120 px-15 pt-10 flex justify-between"
+    >
+      <div id="six" class="sec-left w-[65%] h-full">
+        <p class="quote-icon"><i class="fa-solid fa-quote-left"></i></p>
+        <p
+          class="text-[52px] leading-15 py-5 tracking-tighter text-justify wrap-break-word hyphens-auto [word-spacing:-0.10em]"
+        >
+          Figma helps us paint the north star for the whole company. It keeps
+          everyone aligned and excited.
+        </p>
+      </div>
+
+      <div
+        class="sec-right w-[25%] h-full flex flex-col justify-center items-start gap-4"
+      >
+        <div class="bg-white py-1 px-2 rounded">
+          <img
+            class="h-8"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/de3717bbf05134da0b92f1104c1027228e998fae-171x48.svg?q=75&fit=max&auto=format"
+            alt=""
+          />
+        </div>
+
+        <div class="flex items-center gap-4">
+          <div class="profile-wrap shrink-0">
+            <img
+              src="https://cdn.sanity.io/images/599r6htc/regionalized/4b1d8b9d27cbb85f931c4a67cbdd7abad42e06bc-600x600.png?w=48&q=75&fit=max&auto=format&dpr=2"
+              alt=""
+              class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover"
+            />
+          </div>
+
+          <p class="leading-tight">
+            <span class="block font-semibold">Henry Modisett</span>
+            <span class="text-sm text-gray-600">Head of Design</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 4 Bring everyone -->
+
+    <section
+      id="section-4"
+      class="bg-[#f3ffe3] w-full min-h-full px-15 pt-20 pb-15"
+    >
+      <h1 class="text-[52px] w-[55%] leading-15">
+        Bring everyone together with systems that scale.
+      </h1>
+
+      <div class="w-full min-h-110 flex py-15 gap-20 flex-wrap justify-between">
+        <div class="w-[46%] h-full">
+          <img
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/2f1c0ba703010a1b4126b14a9b0a65695e2655c2-1260x944.png"
+            class="w-full h-full object-cover"
+          />
+          <p class="text-[22px] pt-5 text-justify">
+            <strong>Share libraries and design systems across teams.</strong>
+            Create reusable components, variables, and brand assets to keep your
+            entire organization building with the same visual language.
+          </p>
+          <button
+            class="nav-btn flex items-center gap-2 capitalize text-[16px] pt-2 pb-5 relative"
+          >
+            <span class="nav-text">
+              Explore design systems
+              <i class="fa-solid fa-arrow-right nav-arrow pl-1"></i>
+            </span>
+          </button>
+        </div>
+
+        <div class="w-[46%] h-full">
+          <img
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/d2d61daa22d944ec3cd62677c2adf8394496f903-1260x944.png?q=75&fit=max&auto=format&dpr=2"
+            class="w-full h-full object-cover"
+          />
+          <p class="text-[22px] pt-5 text-justify">
+            <strong> Unlock your team with on-brand templates.</strong> Share
+            templates with your organization so anyone can quickly create social
+            media assets, display ads, one-pagers, and more.
+          </p>
+          <button
+            class="nav-btn flex items-center gap-2 capitalize text-[16px] pt-2 pb-5 relative"
+          >
+            <span class="nav-text">
+              Explore Figma Buzz
+              <i class="fa-solid fa-arrow-right nav-arrow pl-1"></i>
+            </span>
+          </button>
+        </div>
+
+        <!-- Centered third card -->
+        <div class="w-[46%] h-full mx-auto">
+          <img
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/278b3fae156f139de38afab1b0117410996a5f0e-2100x1183.png?q=75&fit=max&auto=format&dpr=2"
+            class="w-full h-full object-cover"
+          />
+          <p class="text-[22px] pt-5 text-justify">
+            <strong>Create one source of truth for devs and designers.</strong>
+            Get specs, annotations, and code snippets in one dedicated space
+            with Dev Mode.
+          </p>
+          <button
+            class="nav-btn flex items-center gap-2 capitalize text-[16px] pt-2 pb-5 relative"
+          >
+            <span class="nav-text">
+              Explore Dev Mode
+              <i class="fa-solid fa-arrow-right nav-arrow pl-1"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 5 -->
+    <section id="section-5" class="w-full min-h-full bg-[#e2e2e2] pl-15 pt-20">
+      <h1 class="text-6xl font-medium tracking-tight">
+        Ship products, any way you want
+      </h1>
+
+      <div class="w-full h-140 flex gap-15 mt-12">
+        <div id="sec-5-left" class="w-1/2 h-full py-10 flex items-end">
+          <div>
+            <div class="w-[85%] py-3 border-b border-black">
+              <div class="flex items-center gap-3">
+                <span class="text-3xl"><i class="fa-solid fa-gear"></i></span>
+                <p class="text-2xl font-semibold">
+                  Turn Figma context into code
+                </p>
+              </div>
+              <p class="text-2xl">
+                Our Figma MCP server lets you bring Figma context directly into
+                your agentic coding tools.
+              </p>
+              <button
+                class="nav-btn flex items-center gap-2 capitalize text-[16px] pt-2 pb-5 relative"
+              >
+                <span class="nav-text">
+                  Explore design systems
+                  <i class="fa-solid fa-arrow-right nav-arrow pl-1"></i>
+                </span>
+              </button>
+            </div>
+            <div
+              class="group w-[85%] py-8 border-b border-black flex items-center overflow-hidden cursor-pointer"
+            >
+              <!-- Icon -->
+              <span
+                class="text-3xl opacity-0 -translate-x-6 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-out"
+              >
+                <i class="fa-brands fa-pix"></i>
+              </span>
+
+              <!-- Text -->
+              <p
+                class="text-2xl font-semibold transition-all duration-300 -translate-x-7 ease-out group-hover:translate-x-6"
+              >
+                Publish custom websites with or without code
+              </p>
+            </div>
+
+            <div
+              class="group w-[85%] py-8 border-b border-black flex items-center overflow-hidden cursor-pointer"
+            >
+              <span
+                class="text-3xl opacity-0 -translate-x-6 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-out"
+              >
+                <i class="fa-brands fa-pix"></i>
+              </span>
+
+              <p
+                class="text-2xl font-semibold transition-all duration-300 -translate-x-7 ease-out group-hover:translate-x-6"
+              >
+                Ship products faster with AI
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="sec-5-right" class="w-1/2 h-full">
+          <img
+            class="h-full bg-cover"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/24e122cd8a5089bd145f3fd46a35554bae2780b4-1560x1248.png?w=908&q=75&fit=max&auto=format&dpr=2"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- section 6 -->
+
+    <section
+      id="Figma-helps-section3"
+      class="w-full h-130 px-15 py-20 flex justify-between"
+    >
+      <div id="six" class="sec-left w-[62%] h-full">
+        <p class="quote-icon2"><i class="fa-solid fa-quote-left"></i></p>
+        <p
+          class="text-5xl leading-17 py-5 tracking-tighter text-justify wrap-break-word hyphens-auto [word-spacing:-0.10em]"
+        >
+          Nearly everything that designers and developers need is available in
+          Figma.
+        </p>
+      </div>
+
+      <div
+        class="sec-right w-[25%] h-full flex flex-col justify-center pt-20 items-start gap-4"
+      >
+        <div class="bg-white py-1 px-2 rounded">
+          <img
+            class="h-8"
+            src="https://cdn.sanity.io/images/599r6htc/regionalized/a9bfb23cca986ee16b0547274bcd7461ffd373aa-67x18.svg?q=75&fit=max&auto=format"
+            alt=""
+          />
+        </div>
+
+        <div class="flex items-center gap-4">
+          <div class="profile-wrap2 shrink-0">
+            <img
+              src="https://cdn.sanity.io/images/599r6htc/regionalized/e544a94ec97a332ceed274228d79ef658b36c49f-640x640.png?w=48&q=75&fit=max&auto=format&dpr=2"
+              alt=""
+              class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover"
+            />
+          </div>
+
+          <p class="leading-tight">
+            <span class="block font-semibold">Henry Modisett</span>
+            <span class="text-sm text-gray-600">Head of Design</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- section-7  -->
+    <!-- Explore what people are making  -->
+
+    <section class="w-full min-h-full px-15">
+      <h1
+        class="text-5xl leading-17 tracking-tighter text-justify wrap-break-word hyphens-auto [word-spacing:-0.10em]>Explore what people are making"
+      >
+        Explore what people are making
+      </h1>
+      <div
+        id="explore-div"
+        class="w-full h-150 mt-10 grid grid-cols-4 gap-6 py-5"
+      ></div>
+
+      <button
+        class="nav-btn flex items-center mx-auto gap-2 capitalize text-[16px] pt-5 pb-5 relative"
+      >
+        <span class="nav-text">
+          Explore design systems
+          <i class="fa-solid fa-arrow-right nav-arrow pl-1"></i>
+        </span>
+      </button>
+    </section>
+
+    <!-- section-8  -->
+    <section id="sec-8" class="w-full mt-10 relative">
+      <img
+        class="w-full bg-cover"
+        src="./assets/bg-cover.png"
+        alt=""
+        srcset=""
+      />
+      <button
+        class="group absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-10 py-5 text-4xl bg-black text-white font-medium rounded-2xl flex items-center justify-center overflow-hidden cursor-pointer transition-all duration-500 hover:scale-105 active:scale-95"
+      >
+        <!-- SHINE EFFECT -->
+        <span
+          class="absolute inset-0 bg-white/10 translate-x-full group-hover:translate-x-[120%] transition-transform duration-700 ease-in-out"
+        ></span>
+
+        <!-- CONTENT -->
+        <span class="relative z-10 flex items-center">
+          <span
+            class="transition-all duration-500 ease-in-out pl-4 group-hover:mr-5"
+          >
+            Get started for free
+          </span>
+
+          <span
+            class="inline-block opacity-0 -translate-x-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out"
+          >
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </span>
+      </button>
+    </section>
+
+    <!-- section 9 -->
+    <section
+      class="w-full bg-gray-950 min-h-full px-15 pt-22 pb-30 border-b border-gray-800"
+    >
+      <p
+        class="w-[50%] text-[50px] leading-15 tracking-tighter text-white text-justify wrap-break-word hyphens-auto [word-spacing:-0.10em]"
+      >
+        Start with a template. Make just about anything.
+      </p>
+      <button
+        class="group relative px-6 py-3 text-[18px] border-2 border-white rounded-md flex items-center justify-center overflow-hidden active:scale-95 transition-all duration-300 cursor-pointer mt-8"
+      >
+        <span class="flex items-center">
+          <span
+            class="text transition-all text-white duration-500 ease-in-out group-hover:mr-5"
+            >Explore all templates</span
+          >
+          <span
+            class="arrow inline-block opacity-0 transform -translate-x-5 text-white group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 ease-in-out active:scale-95"
+          >
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </span>
+      </button>
+
+      <div id="card-section" class="w-full mt-8">
+        <!-- TOP BAR -->
+        <div class="w-full flex items-center justify-between text-white">
+          <div class="text-2xl">
+            <span id="currentIndex">1</span>/<span id="totalCount">10</span>
+          </div>
+
+          <div class="flex gap-4 mr-6">
+            <button
+              id="prevBtn"
+              class="size-12 rounded-full bg-gray-500/30 flex items-center justify-center cursor-pointer transition-all duration-300 ease-in-out"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <button
+              id="nextBtn"
+              class="size-12 rounded-full bg-gray-500/30 flex items-center justify-center cursor-pointer transition-all duration-300 ease-in-out"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- SLIDER -->
+        <div class="w-full overflow-hidden mt-5">
+          <div
+            id="sec9-bottom-bar"
+            class="flex gap-7 transition-transform duration-500"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer  -->
+
+    <footer class="w-full bg-gray-950 text-white py-16 px-6 md:px-15">
+      <div class="w-full mt-10 grid grid-cols-1 md:grid-cols-5">
+        <!-- BRAND -->
+        <div class="flex flex-col justify-between space-y-4 b">
+          <h1 class="text-2xl font-bold">BrandName</h1>
+          <p class="text-gray-400">
+            Crafting beautiful templates and websites for creators everywhere.
+          </p>
+          <div class="flex space-x-4 mt-2">
+            <a href="#" class="hover:text-teal-400 transition"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="hover:text-teal-400 transition"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="hover:text-teal-400 transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="hover:text-teal-400 transition"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- PRODUCTS -->
+        <div class="flex flex-col justify-between space-y-2">
+          <h2 class="text-xl font-semibold">Products</h2>
+          <ul class="space-y-1 text-gray-400">
+            <li>
+              <a href="#" class="hover:text-teal-400 transition">Templates</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-teal-400 transition">Plugins</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-teal-400 transition"
+                >Portfolio Kits</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-teal-400 transition">Icons</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COMPANY -->
+        <div class="flex flex-col justify-between space-y-2">
+          <h2 class="text-xl font-semibold">Company</h2>
+          <ul class="space-y-1 text-gray-400">
+            <li>
+              <a href="#" class="hover:text-teal-400 transition">About Us</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-teal-400 transition">Careers</a>
+            </li>
+            <li><a href="#" class="hover:text-teal-400 transition">Blog</a></li>
+            <li>
+              <a href="#" class="hover:text-teal-400 transition">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- SUPPORT -->
+        <div class="flex flex-col justify-between space-y-2">
+          <h2 class="text-xl font-semibold">Support</h2>
+          <ul class="space-y-1 text-gray-400">
+            <li>
+              <a href="#" class="hover:text-teal-400 transition">Help Center</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-teal-400 transition"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-teal-400 transition"
+                >Terms of Service</a
+              >
+            </li>
+            <li><a href="#" class="hover:text-teal-400 transition">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- RESOURCES -->
+        <div class="flex flex-col justify-between space-y-2">
+          <h2 class="text-xl font-semibold">Resources</h2>
+          <ul class="space-y-1 text-gray-400">
+            <li>
+              <a href="#" class="hover:text-teal-400 transition"
+                >Documentation</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-teal-400 transition">Community</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-teal-400 transition">Tutorials</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-teal-400 transition"
+                >Release Notes</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="mt-12 border-t border-gray-800 pt-6 text-center text-gray-500 text-sm"
+      >
+        &copy; 2026 BrandName. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="figma.js"></script>
+  </body>
+</html>
