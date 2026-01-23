@@ -1,109 +1,130 @@
-// Sidebar toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const cursor = document.getElementById("cursor");
 
-function asideBar() {
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let cursorX = mouseX;
+  let cursorY = mouseY;
+
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animate() {
+    cursorX += (mouseX - cursorX) * 0.15;
+    cursorY += (mouseY - cursorY) * 0.15;
+
+    cursor.style.left = cursorX + "px";
+    cursor.style.top = cursorY + "px";
+
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  /* TEXT hover */
+  document
+    .querySelectorAll("p,h1,h2,h3,h4,h5,h6,span,a,button")
+    .forEach(el => {
+      el.addEventListener("mouseenter", () =>
+        cursor.classList.add("cursor-text")
+      );
+      el.addEventListener("mouseleave", () =>
+        cursor.classList.remove("cursor-text")
+      );
+    });
+
+  /* IMAGE hover */
+  document.querySelectorAll("img").forEach(img => {
+    img.addEventListener("mouseenter", () =>
+      cursor.classList.add("cursor-image")
+    );
+    img.addEventListener("mouseleave", () =>
+      cursor.classList.remove("cursor-image")
+    );
+  });
+});
+
+/* ================= Sidebar ================= */
+(function sidebarToggle() {
   const menuBtn = document.querySelector("#menuBtn");
-  const sideBar = document.querySelector("#sidebar");
+  const sidebar = document.querySelector("#sidebar");
   let isOpen = false;
 
   menuBtn.addEventListener("click", () => {
-    if (!isOpen) {
-      sideBar.classList.remove("-right-80");
-      sideBar.classList.add("right-0");
-      isOpen = true;
-    } else {
-      sideBar.classList.remove("right-0");
-      sideBar.classList.add("-right-80");
-      isOpen = false;
-    }
+    sidebar.classList.toggle("-right-80", isOpen);
+    sidebar.classList.toggle("right-0", !isOpen);
+    isOpen = !isOpen;
   });
-}
-asideBar();
+})();
 
-// Theme toggle
-function theme() {
-  const sidebar = document.querySelector("#sidebar");
-  const sidebarLinks = sidebar.querySelectorAll("ul li a");
-  const logoutBtn = document.querySelector("#logoutBtn"); // Ensure id exists in HTML
+/* ================= Theme ================= */
+(function themeToggle() {
   const themeBtn = document.querySelector("#themeBtn");
-  const toggleSlider = document.querySelector("#toggleSlider"); // sliding circle
+  const toggleSlider = document.querySelector("#toggleSlider");
   const sunIcon = themeBtn.querySelector(".fa-sun");
   const moonIcon = themeBtn.querySelector(".fa-moon");
+
+  const sidebar = document.querySelector("#sidebar");
+  const sidebarLinks = sidebar.querySelectorAll("ul li a");
+  const logoutBtn = document.querySelector("#logoutBtn");
   const menuHeading = document.querySelector("#menuHeading");
-  const header = document.querySelector("#header");
-  const sec4 = document.querySelector("#section-4");
-  const sec5 = document.querySelector("#section-5");
   const dropdown = document.querySelector("#navDropdown");
 
-  let isDark = false;
+  const THEME_KEY = "theme";
 
-  themeBtn.addEventListener("click", () => {
-    if (!isDark) {
-      // Dark mode
-      document.body.classList.add("bg-gray-900", "text-white");
-      document.body.classList.remove("bg-white", "text-gray-800");
+  function applyTheme(isDark) {
+    document.body.classList.toggle("dark-theme", isDark);
 
-      toggleSlider.classList.add("translate-x-20"); // move circle
-      sunIcon.classList.add("text-gray-400");
-      sunIcon.classList.remove("text-yellow-400");
-      moonIcon.classList.add("text-yellow-400");
-      moonIcon.classList.remove("text-gray-600");
-      dropdown.classList.remove("bg-white");
-      dropdown.classList.add("bg-black");
+    toggleSlider.classList.toggle("translate-x-20", isDark);
 
-      // Sidebar
-      sidebar.classList.add("bg-gray-800/70");
-      sidebarLinks.forEach((link) => {
-        link.classList.add("text-gray-200");
-        link.classList.remove("text-gray-700");
-      });
-      logoutBtn.classList.add("bg-red-600", "text-white");
-      logoutBtn.classList.remove("bg-[#d62828]");
-      menuHeading.classList.add("text-gray-100");
-      menuHeading.classList.remove("text-gray-800");
-      header.classList.add("bg-gray-700");
-      header.classList.remove("bg-white");
+    sunIcon.classList.toggle("text-yellow-400", !isDark);
+    sunIcon.classList.toggle("text-gray-400", isDark);
+
+    moonIcon.classList.toggle("text-gray-600", !isDark);
+    moonIcon.classList.toggle("text-yellow-400", isDark);
+
+    dropdown?.classList.toggle("bg-black", isDark);
+    dropdown?.classList.toggle("bg-white", !isDark);
+
+    sidebar.classList.toggle("bg-gray-800/70", isDark);
+
+    sidebarLinks.forEach((link) => {
+      link.classList.toggle("text-gray-200", isDark);
+      link.classList.toggle("text-gray-700", !isDark);
+    });
+
+    logoutBtn.classList.toggle("bg-red-600", isDark);
+    logoutBtn.classList.toggle("bg-[#d62828]", !isDark);
+
+    menuHeading.classList.toggle("text-gray-100", isDark);
+    menuHeading.classList.toggle("text-gray-800", !isDark);
+
+    // ================= Section bg toggle =================
+    const sec4 = document.querySelector("#section-4");
+    const sec5 = document.querySelector("#section-5");
+
+    if (isDark) {
       sec4.classList.remove("bg-[#f3ffe3]");
       sec5.classList.remove("bg-[#e2e2e2]");
-
-      isDark = true;
     } else {
-      // Light mode
-      document.body.classList.add("bg-white", "text-gray-800");
-      document.body.classList.remove("bg-gray-900", "text-white");
-
-      toggleSlider.classList.remove("translate-x-20");
-      sunIcon.classList.add("text-yellow-400");
-      sunIcon.classList.remove("text-gray-400");
-      moonIcon.classList.add("text-gray-600");
-      moonIcon.classList.remove("text-yellow-400");
-      dropdown.classList.add("bg-white");
-      dropdown.classList.remove("bg-black");
-
-      // Sidebar
-      sidebar.classList.remove("bg-gray-800/70");
-      sidebarLinks.forEach((link) => {
-        link.classList.add("text-gray-700");
-        link.classList.remove("text-gray-200");
-      });
-      logoutBtn.classList.add("bg-[#d62828]");
-      logoutBtn.classList.remove("bg-red-600");
-      menuHeading.classList.add("text-gray-800");
-      menuHeading.classList.remove("text-gray-100");
-      header.classList.add("bg-white");
-      header.classList.add("bg-gray-700");
       sec4.classList.add("bg-[#f3ffe3]");
       sec5.classList.add("bg-[#e2e2e2]");
-
-      isDark = false;
     }
-  });
+
+    // Save theme in localStorage
+    localStorage.setItem(THEME_KEY, isDark ? "dark" : "light");
+  }
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  applyTheme(savedTheme === "dark");
 
   themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
+    const isDark = !document.body.classList.contains("dark-theme");
+    applyTheme(isDark);
   });
-}
-
-theme();
+})();
 
 // Navbar nalinks functionallty
 
@@ -412,9 +433,18 @@ document.addEventListener("DOMContentLoaded", () => {
     { title: "Presentations", bg: "#c4baff", img: "./assets/template4.avif" },
     { title: "Invitations", bg: "#95b9ac", img: "./assets/template6.avif" },
     { title: "Illustrations", bg: "#ff7237", img: "./assets/template5.avif" },
-    { title: "Portfolio templates", bg: "#cb9fd2", img: "./assets/template7.avif" },
+    {
+      title: "Portfolio templates",
+      bg: "#cb9fd2",
+      img: "./assets/template7.avif",
+    },
     { title: "Plugins", bg: "#ffc9c1", img: "./assets/template8.avif" },
-    { title: "Web ads", bg: "#721c1c", img: "./assets/template9.avif", textWhite: true },
+    {
+      title: "Web ads",
+      bg: "#721c1c",
+      img: "./assets/template9.avif",
+      textWhite: true,
+    },
     { title: "Icons", bg: "#c7f8fb", img: "./assets/template10.avif" },
   ];
 
@@ -436,11 +466,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // CREATE CARDS
-  templatesData.forEach(item => sliderTrack.appendChild(createCard(item)));
+  templatesData.forEach((item) => sliderTrack.appendChild(createCard(item)));
 
   // CLONES for infinite effect
   sliderTrack.appendChild(createCard(templatesData[0])); // first clone
-  sliderTrack.insertBefore(createCard(templatesData[templatesData.length - 1]), sliderTrack.firstChild); // last clone
+  sliderTrack.insertBefore(
+    createCard(templatesData[templatesData.length - 1]),
+    sliderTrack.firstChild,
+  ); // last clone
 
   let sliderIndex = 1;
   const gap = 28;
@@ -486,6 +519,3 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCounter(); // ✅ update counter only after transition
   });
 });
-
-
-
